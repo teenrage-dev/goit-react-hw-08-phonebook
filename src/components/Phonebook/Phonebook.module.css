@@ -1,0 +1,49 @@
+body {
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Loader {
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phonebook_box {
+  margin: 0 auto;
+  padding: 0;
+  width: 560px;
+  min-height: max-content;
+  background-color: rgba(255, 255, 255, 0.726);
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgb(37, 211, 196);
+  padding: 10px;
+  overflow: hidden;
+  color: #000;
+  border: none;
+  opacity: 0.9;
+}
+
+.Title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* ------------------CONTACTS--------------------- */
+
+.phonebook__contacts {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 540px;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 30px;
+}

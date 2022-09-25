@@ -1,0 +1,62 @@
+.phonebook__list {
+  position: relative;
+  margin: 0;
+  height: calc(100vh - 580px);
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  max-height: 200px;
+}
+
+.phonebook__item {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.phonebook__item::before {
+  content: '👨‍💼';
+  position: absolute;
+  max-width: 10px;
+  height: 10px;
+  /* margin-right: 25px; */
+  margin-left: -35px;
+}
+
+.phonebook__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.phonebook__item_text {
+  float: left;
+  text-align: left;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.phonebook_btn {
+  cursor: pointer;
+  width: 150px;
+  padding: 5px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+  height: 35px;
+  background-color: #00c9ff;
+}
+
+.phonebook_btn:hover {
+  box-shadow: 0 0 5px #000;
+  background-color: transparent;
+  border-color: #ccc;
+  color: #fff;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  text-shadow: 0px 1px 0 rgb(0, 0, 0), 0px -1px 0 rgb(0, 0, 0),
+    1px 0px 0 rgb(0, 0, 0), -1px 0px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0),
+    1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0);
+}

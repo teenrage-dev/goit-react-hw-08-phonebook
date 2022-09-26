@@ -36,13 +36,13 @@ export const ContactForm = ({ handleSubmit, showMessage }) => {
       }}
       className={css.phonebook__form}
     >
-      <label htmlFor="name" className={css.phonebook_name}>
+      <label htmlFor="userName" className={css.phonebook_name}>
         Name
       </label>
       <input
         className={css.phonebook__input}
         type="text"
-        name="name"
+        name="userName"
         value={name}
         onChange={handleChangeName}
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"

@@ -5,10 +5,9 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import { setFilter } from '../../redux/filter/filter-slice';
-import { FallingLines } from 'react-loader-spinner';
-
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
+import { setFilter } from '../../redux/filter/filter-slice';
 import {
   fetchContacts,
   addContact,
@@ -19,8 +18,6 @@ export const Phonebook = () => {
   const items = useSelector(({ items }) => items);
   const filter = useSelector(({ filter }) => filter);
   const dispatch = useDispatch();
-
-  console.log(items);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -72,35 +69,24 @@ export const Phonebook = () => {
   }
 
   const renderList = getFIlteredContacts();
-  // console.log(renderList);
   return (
-    <>
-      {items.loading ? (
-        <div className={css.Loader}>
-          <FallingLines
-            color="#00c9ff"
-            width="70"
-            visible={true}
-            ariaLabel="falling-lines-loading"
+    <div className={css.Wrapper}>
+      <div className={css.phonebook_box}>
+        <h2 className={css.Title}>Phonebook</h2>
+        <ContactForm handleSubmit={handleSubmit} showMessage={showMessage} />
+        <div className={css.phonebook__contacts}>
+          <h2 className={css.Title}>Contacts</h2>
+          <Filter
+            filter={filter}
+            handleChangeFilterByName={handleChangeFilterByName}
+          />
+          <ContactList
+            renderList={renderList}
+            onDeleteContact={onDeleteContact}
+            itemsLoading={items.loading}
           />
         </div>
-      ) : (
-        <div className={css.phonebook_box}>
-          <h2 className={css.Title}>Phonebook</h2>
-          <ContactForm handleSubmit={handleSubmit} showMessage={showMessage} />
-          <div className={css.phonebook__contacts}>
-            <h2 className={css.Title}>Contacts</h2>
-            <Filter
-              filter={filter}
-              handleChangeFilterByName={handleChangeFilterByName}
-            />
-            <ContactList
-              renderList={renderList}
-              onDeleteContact={onDeleteContact}
-            />
-          </div>
-        </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };

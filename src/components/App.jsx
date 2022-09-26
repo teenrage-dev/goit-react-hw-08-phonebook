@@ -1,5 +1,12 @@
-import { Phonebook } from 'components/Phonebook/Phonebook';
+import { Navbar } from './Navbar/Navbar';
+import { UserRoutes } from './UserRoutes';
+import css from './App.module.css';
 
 export const App = () => {
-  return <Phonebook />;
+  return (
+    <div className={css.Wrapper}>
+      <Navbar />
+      <UserRoutes />
+    </div>
+  );
 };

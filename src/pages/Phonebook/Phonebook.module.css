@@ -1,19 +1,9 @@
-body {
-  background: linear-gradient(to right, #00c9ff, #92fe9d);
+.Wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
-
-.Loader {
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0.8;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
 }
 
 .phonebook_box {

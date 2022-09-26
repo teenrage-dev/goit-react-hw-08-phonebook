@@ -1,5 +1,4 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 import css from '../ContactList/ContactList.module.css';
 import { FallingLines } from 'react-loader-spinner';
@@ -18,10 +17,10 @@ export const ContactList = ({ renderList, onDeleteContact, itemsLoading }) => {
         </div>
       ) : (
         <ul className={css.phonebook__list}>
-          {renderList.map(({ name, phone, id }) => (
-            <li key={nanoid()} className={css.phonebook__item}>
+          {renderList.map(({ name, number, id }) => (
+            <li key={id} className={css.phonebook__item}>
               <p className={css.phonebook__item_text}>
-                {name}: {phone}
+                {name}: {number}
               </p>
               <button
                 className={css.phonebook_btn}
@@ -42,8 +41,7 @@ ContactList.propTypes = {
     PropTypes.exact({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      phone: PropTypes.string.isRequired,
-      createdAt: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
   onDeleteContact: PropTypes.func.isRequired,

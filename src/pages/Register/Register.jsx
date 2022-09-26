@@ -2,14 +2,15 @@ import css from './Register.module.css';
 import { RegisterForm } from './RegisterForm/RegisterForm';
 import { signup } from '../../redux/auth/auth-operation';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAuthError, isAuth } from 'redux/auth/auth-selectors';
+import { getAuthError } from 'redux/auth/auth-selectors';
 import toast, { Toaster } from 'react-hot-toast';
 import { Navigate } from 'react-router-dom';
+import useAuth from 'shared/hoocks/useAuth';
 
 export const Register = () => {
   const dispatch = useDispatch();
   const { status, message } = useSelector(getAuthError);
-  const isLogin = useSelector(isAuth);
+  const isLogin = useAuth();
 
   const onRegister = data => {
     dispatch(signup(data));

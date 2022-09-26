@@ -2,7 +2,9 @@ import { combineReducers, createReducer } from '@reduxjs/toolkit';
 import actions from './items-actions';
 
 const dataReducer = createReducer([], {
-  [actions.fetchContactsSuccess]: (_, { payload }) => payload,
+  [actions.fetchContactsSuccess]: (_, { payload }) => {
+    return payload;
+  },
   [actions.addContactSuccess]: (store, { payload }) => [...store, payload],
   [actions.removeContactSuccess]: (store, { payload }) =>
     store.filter(({ id }) => id !== payload),

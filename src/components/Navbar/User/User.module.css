@@ -1,8 +1,23 @@
 .Wrapper {
   display: flex;
+  align-items: center;
+}
+.Text {
+  font-size: 22px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+  margin-right: 10px;
+  display: flex;
 }
 
-.Link {
+.Icon {
+  align-self: center;
+  height: 22px;
+  margin-right: 5px;
+}
+
+.Btn {
   display: block;
   width: 130px;
   padding: 12px 0;
@@ -23,10 +38,10 @@
   align-self: center;
 }
 
-.Link:hover,
-.Link:focus {
-  background-color: #2ec0e5;
-  box-shadow: 0px 15px 20px rgba(77, 108, 106, 0.4);
+.Btn:hover,
+.Btn:focus {
+  background-color: #08252c;
+  box-shadow: 0px 15px 20px rgba(46, 217, 229, 0.3);
   color: #fff;
   transform: translateY(-7px);
 }

@@ -4,7 +4,7 @@ import css from '../ContactForm/ContactForm.module.css';
 
 export const ContactForm = ({ handleSubmit, showMessage }) => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setPhone] = useState('');
 
   const handleChangeName = event => {
     const { value } = event.target;
@@ -19,10 +19,10 @@ export const ContactForm = ({ handleSubmit, showMessage }) => {
   const validateForm = (event, callback) => {
     event.preventDefault();
 
-    if (!name || !phone) {
+    if (!name || !number) {
       showMessage('Please fill in all fields');
     }
-    const contact = callback({ name, phone });
+    const contact = callback({ name, number });
     if (contact) {
       setName('');
       setPhone('');
@@ -56,7 +56,7 @@ export const ContactForm = ({ handleSubmit, showMessage }) => {
         className={css.phonebook__input}
         type="tel"
         name="number"
-        value={phone}
+        value={number}
         onChange={handleChangePhone}
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"

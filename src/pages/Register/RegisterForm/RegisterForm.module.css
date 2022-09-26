@@ -52,8 +52,8 @@
 
 .BtnSumbit:hover,
 .BtnSumbit:focus {
-  background-color: #2ee59d;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  background-color: #2ec0e5;
+  box-shadow: 0px 15px 20px rgba(46, 217, 229, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }

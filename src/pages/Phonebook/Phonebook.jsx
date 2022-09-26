@@ -25,7 +25,7 @@ export const Phonebook = () => {
 
   // submit and add to local storage
   const handleSubmit = newContact => {
-    const { name, phone } = newContact;
+    const { name, number } = newContact;
 
     const contact = items.data.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
@@ -37,7 +37,7 @@ export const Phonebook = () => {
     }
     const action = addContact(newContact);
     dispatch(action);
-    const newContacts = [...items.data, { name, phone, id: nanoid() }];
+    const newContacts = [...items.data, { name, number, id: nanoid() }];
     return newContacts;
   };
 

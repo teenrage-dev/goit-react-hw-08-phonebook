@@ -1,0 +1,36 @@
+.Wrapper {
+  display: flex;
+}
+
+.Link {
+  display: block;
+  width: 130px;
+  padding: 12px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  align-self: center;
+}
+
+.Link:hover,
+.Link:focus {
+  background-color: #2ec0e5;
+  box-shadow: 0px 15px 20px rgba(46, 217, 229, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.Link:first-child {
+  margin-right: 10px;
+}

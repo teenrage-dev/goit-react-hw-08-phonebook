@@ -6,6 +6,7 @@ export const fetchContacts = () => {
     try {
       dispatch(actions.fetchContactsLoading());
       const data = await api.getContacts();
+
       dispatch(actions.fetchContactsSuccess(data));
     } catch (error) {
       dispatch(actions.fetchContactsError(error.message));
@@ -15,8 +16,6 @@ export const fetchContacts = () => {
 };
 export const addContact = data => {
   const postFn = async (dispatch, getState) => {
-    const contacts = getState();
-    console.log(contacts);
     try {
       dispatch(actions.addContactLoading());
       const result = await api.addContact(data);
